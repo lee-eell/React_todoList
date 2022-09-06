@@ -3,6 +3,7 @@ import './index.css'
 
 export default class Footer extends Component {
 
+    //collect all checked button
     handleAllChecked = (event) => {
         //全选或取消全选,把当前是否勾选传过去
         this.props.allChecked(event.target.checked)

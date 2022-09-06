@@ -16,7 +16,7 @@ export default class App extends Component {
         ]
     }
 
-    //提供给Header传回状态回来！
+    //provide a function to Header then callback the state
     acceptInput = (todoObj) => {
         const { todos } = this.state
         //add todoObje to todos Array
@@ -24,7 +24,7 @@ export default class App extends Component {
         this.setState({ todos: newTodos })
     }
 
-    //提供给Item改变每条todo的done状态
+    //provide each todo state to Item then can change each done state
     changeChecked = (id, done) => {
         const { todos } = this.state
         const newTodos = todos.map((todo) => {
@@ -34,7 +34,7 @@ export default class App extends Component {
         this.setState({ todos: newTodos })
     }
 
-    //删除某一条todo
+    //delete One Todo
     deleteTodo = (id) => {
         const { todos } = this.state
         const newTodos = todos.filter((todoObj) => {
@@ -43,6 +43,7 @@ export default class App extends Component {
         this.setState({ todos: newTodos })
     }
 
+    //All checked button change
     allChecked = (flag) => {
         const { todos } = this.state
         const newTodos = todos.map((todo) => {
@@ -51,6 +52,7 @@ export default class App extends Component {
         this.setState({ todos: newTodos })
     }
 
+    //delete all done
     deleteAllDone = () => {
         const { todos } = this.state
         const newTodos = todos.filter((todo) => {
